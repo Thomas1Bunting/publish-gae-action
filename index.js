@@ -29,6 +29,7 @@ try {
         const secrets_buffer = Buffer.from(secrets, 'base64');
         data = deepmerge(data, JSON.parse(secrets_buffer.toString()));
         let yamlStr = yaml.safeDump(data);
+        console.log(yamlStr);
         fs.writeFileSync(gaeConfigPath, yamlStr, 'utf8');
     }
 
