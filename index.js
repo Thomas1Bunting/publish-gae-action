@@ -19,7 +19,7 @@ try {
     });
     
     const gaeConfigPath = core.getInput('gae_config_path') || './app.yaml';
-    const fileContents = fs.readFileSync(gaeConfigPath, 'utf8');
+    const fileContents = fs.readFileSync(__dirname + '/' + gaeConfigPath, 'utf8');
 
     let data = yaml.safeLoad(fileContents);
 
